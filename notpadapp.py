@@ -80,12 +80,31 @@ def select_all():
     text.mark_set(tk.INSERT, "1.0")
     text.see(tk.INSERT)
 
+#-----------DarkMode Funcation-----------
+
+# Dark Mode
+def dark_mode():
+    text.config(
+        bg="#1e1e1e",
+        fg="white",
+        insertbackground="white"
+    )
+
+# Light Mode
+def light_mode():
+    text.config(
+        bg="white",
+        fg="black",
+        insertbackground="black"
+    )
+
 
 #manu bar
 menu = tk.Menu(root)
 root.config(menu=menu)
 file_menu = tk.Menu(menu)
 edit_menu = tk.Menu(menu)
+mode_menu = tk.Menu(menu)
 
 #new ,openfile,save,exit
 
@@ -107,6 +126,13 @@ edit_menu.add_command(label="Cut",command= cut_text)
 edit_menu.add_command(label="Copy",command= copy_text)
 edit_menu.add_command(label="Paste",command= paste_text)
 edit_menu.add_command(label="Select All",command= select_all)
+
+#add dark and light mode button
+menu.add_cascade(label= "Mode",menu=mode_menu)
+#inside darkmode button
+mode_menu.add_command(label="DarkMood",command= dark_mode)
+mode_menu.add_command(label="LightMood",command= light_mode)
+
 
 #starts and keep the window open
 root.mainloop()
