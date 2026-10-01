@@ -23,7 +23,7 @@ def new_file():
 
 #funcation_openfile
 def open_file():
-    file_path = filedialog.askopenfilename(   #for filedilogopen
+    file_path = filedialog.askopenfilename(#for filedilogopen
         defaultextension=".txt",
         filetypes= [("text Files",".txt")]
     )
@@ -127,7 +127,7 @@ edit_menu.add_command(label="Copy",command= copy_text)
 edit_menu.add_command(label="Paste",command= paste_text)
 edit_menu.add_command(label="Select All",command= select_all)
 
-#add dark and light mode button
+#Add dark and light mode button
 menu.add_cascade(label= "Mode",menu=mode_menu)
 #inside darkmode button
 mode_menu.add_command(label="DarkMood",command= dark_mode)
